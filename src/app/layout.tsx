@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
 import TopNewsHeader from "@/components/top-news-header";
 import Header from "@/components/header";
+import Line from "@/components/ui/line";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <TopNewsHeader />
         <Header />
-
+        <Line className="mt-4" />
         {children}
       </body>
     </html>
