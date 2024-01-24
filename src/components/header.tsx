@@ -1,5 +1,7 @@
 import React from "react";
-import Icon from "./ui/icon";
+import SearchIcon from "/public/svgs/search-icon.svg";
+import FavouriteIcon from "/public/svgs/favourite-icon.svg";
+import CartIcon from "/public/svgs/cart-icon.svg";
 
 function Header() {
   return (
@@ -7,7 +9,7 @@ function Header() {
       <h2 className="text-[24px] font-bold">Mixify</h2>
       <nav>
         <ul className=" space-x-[48px] flex text-[16px] font-normal">
-          <li className="border-b border-text2">Home</li>
+          <li className="border-b border-text2 cursor-pointer">Home</li>
           <li>Contact</li>
           <li>About</li>
           <li>Sign Up</li>
@@ -19,10 +21,12 @@ function Header() {
             placeholder="What are you looking for?"
             className="placeholder:text-text2 placeholder:opacity-50 text-[12px] bg-transparent outline-none w-full "
           />
-          <Icon url="/icons/search-icon.svg" />
+          <SearchIcon className="fill-transparent text-red-500" />
         </div>
-        <Icon url="/icons/favourite-icon.svg" width={20} height={18} />
-        <Icon url="/icons/cart-icon.svg" width={32} height={32} />
+        <FavouriteIcon className="w-5 h-[18px]" />
+        <CartIcon className="w-8 h-8" />
+        {/* <SvgIcon path="/icons/favourite-icon.svg" width={20} height={18} /> */}
+        {/* <SvgIcon path="/icons/cart-icon.svg" width={32} height={32} /> */}
       </div>
     </header>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import categories, { Category } from "./data/categories";
-import Icon from "../ui/icon";
+// import SvgIcon from "../ui/svg-icon";
 
 const CategoryList = () => {
   const renderCategories = (category: Category) => (
@@ -20,14 +20,17 @@ const CategoryList = () => {
           </ul>
         )}
 
-        {category.subcategories && (
-          <Icon
-            url="/icons/right-arrow-icon.svg"
-            width={8}
-            height={13}
-            className="group-hover:text-button2"
-          />
-        )}
+        {/* {category.subcategories && (
+          // <SvgIcon
+          //   path="/icons/right-arrow-icon.svg"
+          //   color="red"
+          //   width={8}
+          //   height={13}
+          //   className="group-hover:text-button2"
+          // />
+          // <SvgIcon icon="back-arrow" size={32} color="blue" />
+
+        )} */}
       </div>
     </ul>
   );
