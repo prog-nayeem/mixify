@@ -1,4 +1,5 @@
 import React from "react";
+import DropDownIcon from "@/public/svgs/drop-down-icon.svg";
 
 function TopNewsHeader() {
   return (
@@ -13,7 +14,7 @@ function TopNewsHeader() {
         <div>
           <div className="flex items-center space-x-2">
             <span>English</span>
-            <img src="/icons/DropDown.svg" />
+            <DropDownIcon />
           </div>
           {/* <ul>
                 <li>Bangla</li>

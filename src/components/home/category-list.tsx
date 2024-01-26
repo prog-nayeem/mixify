@@ -1,6 +1,6 @@
 import React from "react";
 import categories, { Category } from "./data/categories";
-// import SvgIcon from "../ui/svg-icon";
+import DropDownRightArrow from "@/public/svgs/drop-down-right-arrow.svg";
 
 const CategoryList = () => {
   const renderCategories = (category: Category) => (
@@ -13,24 +13,16 @@ const CategoryList = () => {
           {category.name}
         </li>
         {category.subcategories && (
-          <ul className=" hidden">
+          <ul className="hidden">
             {category.subcategories.map((subCategory) => (
               <li key={subCategory}>{subCategory}</li>
             ))}
           </ul>
         )}
 
-        {/* {category.subcategories && (
-          // <SvgIcon
-          //   path="/icons/right-arrow-icon.svg"
-          //   color="red"
-          //   width={8}
-          //   height={13}
-          //   className="group-hover:text-button2"
-          // />
-          // <SvgIcon icon="back-arrow" size={32} color="blue" />
-
-        )} */}
+        {category.subcategories && (
+          <DropDownRightArrow className="w-[8px] h-[13px] group-hover:stroke-button2 transition duration-300" />
+        )}
       </div>
     </ul>
   );
