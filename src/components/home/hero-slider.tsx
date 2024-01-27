@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,30 +8,6 @@ import AppleLogo from "@/public/svgs/apple_logo.svg";
 import RightArrowIcon from "@/public/svgs/right-arrow-icon.svg";
 import heroBannerImage from "@/public/images/hero-banner-image1.png";
 import Image from "next/image";
-import SliderDots from "./slider-dots";
-interface CustomDotsProps {
-  dots: React.ReactNode;
-}
-const CustomDots: React.FC<CustomDotsProps> = ({ dots }) => {
-  console.log(dots);
-  return (
-    <div className="grid place-items-center ">
-      <ul className="flex ">{dots}</ul>
-    </div>
-  );
-};
-
-// const CustomPaging: React.FC<{ i: number }> = ({ i }) => (
-//   <div
-//     style={{
-//       width: "30px",
-//       color: "blue",
-//       border: "1px blue solid",
-//     }}
-//   >
-//     {i + 1}
-//   </div>
-// );
 
 const HeroSlider = () => {
   const settings: Settings = {
@@ -44,11 +20,10 @@ const HeroSlider = () => {
     autoplaySpeed: 2000,
     pauseOnHover: true,
     arrows: false,
-    dotsClass: `slick-dots !bottom-0`,
+    // Custom tailwind selector for editing the child class of slider
+    dotsClass: `slick-dots !flex !justify-center !items-center !bottom-[11px] [&>*]:!w-[12px] [&>*]:bg-primary [&>*]:bg-opacity-50 [&>*]:rounded-full [&>*]:!h-[12px] [&>*]:!mx-[6px] [&_.slick-active]:!bg-secondary2 [&_.slick-active]:!w-[14px] [&_.slick-active]:!h-[14px] [&_.slick-active]:border-2 [&_.slick-active]:border-primary`,
     appendDots: (dots) => <ul className="">{dots}</ul>,
-    customPaging: (i) => (
-      <div className="rounded-full bg-primary bg-opacity-50 !w-3 !h-3 " />
-    ),
+    customPaging: (i) => <div className="h-full" />,
   };
 
   return (
@@ -70,7 +45,10 @@ const HeroSlider = () => {
                 <p className="text-[16px] font-medium border-b-[1px]">
                   Shop Now
                 </p>
-                <RightArrowIcon className="w-[20px] h-[20px] pt-[2.8px]" />
+                <RightArrowIcon
+                  className="w-[20px] h-[20px] pt-[2.8px]"
+                  strokeWidth={1.5}
+                />
               </div>
             </button>
           </div>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
-import TopNewsHeader from "@/components/top-news-header";
-import Header from "@/components/header";
+import TopNewsHeader from "@/components/nav/top-news-header";
+import Header from "@/components/nav/header";
 import Line from "@/components/ui/line";
 
 const poppins = Poppins({

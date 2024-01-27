@@ -9,7 +9,7 @@ const CategoryList = () => {
       key={category.name}
     >
       <div className="flex justify-between items-center">
-        <li className="group-hover:inline-block text-[16px] font-normal ">
+        <li className="group-hover:inline-block text-[16px] tracking-[0.10px] font-normal ">
           {category.name}
         </li>
         {category.subcategories && (
