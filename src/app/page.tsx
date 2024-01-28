@@ -1,5 +1,6 @@
 import CategoryList from "@/components/home/category-list";
 import HeroSlider from "@/components/home/hero-slider";
+import ProductCard from "@/components/shared/products/product-card";
 import SectionHeading, {
   ButtonType,
 } from "@/components/shared/section-heading/section-heading";
@@ -8,7 +9,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <>
+    <div className="pb-40">
       <section className="max-w-screen-xl w-full mx-auto flex">
         <CategoryList />
         <HeroSlider />
@@ -19,7 +20,10 @@ export default function Home() {
           headingText="Flash Sales"
           typeText="Today’s"
         />
+        <div className="mt-10">
+          <ProductCard />
+        </div>
       </section>
-    </>
+    </div>
   );
 }

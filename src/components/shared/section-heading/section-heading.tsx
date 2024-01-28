@@ -1,6 +1,7 @@
 import React from "react";
 import LeftArrowIcon from "@/public/svgs/left-arrow-icon.svg";
 import RightArrowIcon from "@/public/svgs/right-arrow-icon.svg";
+import FillIcon from "@/components/ui/fill-icon";
 
 export enum ButtonType {
   ArrowButton,
@@ -82,15 +83,23 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
       </div>
 
       <div className="flex items-start space-x-2">
-        <button className="bg-secondary w-[46px] h-[46px] rounded-full grid place-items-center">
-          <LeftArrowIcon className="w-[16px]" />
-        </button>
-        <button className="bg-secondary w-[46px] h-[46px] rounded-full grid place-items-center">
-          <RightArrowIcon
-            className="w-[16px] h-[14px] stroke-bg2"
-            strokeWidth={2}
-          />
-        </button>
+        <FillIcon
+          Icon={<LeftArrowIcon className="w-[16px] h-[14px]" />}
+          bgColor="#F5F5F5"
+          width="46px"
+          height="46px"
+        />
+        <FillIcon
+          Icon={
+            <RightArrowIcon
+              className="w-[16px] h-[14px] stroke-bg2"
+              strokeWidth={2}
+            />
+          }
+          bgColor="#F5F5F5"
+          width="46px"
+          height="46px"
+        />
       </div>
     </div>
   );
