@@ -5,25 +5,44 @@ import productImage from "@/public/images/g92-2-500x500 1.png";
 import EyeIcon from "@/public/svgs/eye-icon.svg";
 import FavouriteIcon from "@/public/svgs/favourite-icon.svg";
 import FillIcon from "@/components/ui/fill-icon";
+import Button from "@/components/ui/button";
 
 const ProductCard: React.FC = () => {
   return (
-    <div className="w-[270px] h-[350px]">
-      <div className="h-[250px] relative w-full bg-secondary grid place-items-center rounded-md">
+    <div className="w-[270px] group h-[350px] cursor-pointer">
+      <div className="h-[250px] w-[270px] relative overflow-hidden bg-secondary grid place-items-center rounded-[4px]">
         <Image
           className="w-[190px] h-[180px] object-contain"
           src={productImage}
           alt="HAVIT HV-G92 Gamepad"
         />
-        <div className="w-[55px] absolute top-3 left-3 h-[26px] bg-secondary2 grid place-items-center text-text rounded-md ">
-          <p className="text-[12px] font-normal tracking-wide">-40%</p>
+        <div className="absolute top-3 left-3">
+          <Button
+            buttonText="-40%"
+            width="55px"
+            height="26px"
+            textSize="12px"
+            applyHoverEffect={false}
+          />
         </div>
+
         <div className="absolute top-3 right-3 space-y-2">
           <FillIcon Icon={<FavouriteIcon className="w-[16px] h-[14px]" />} />
           <FillIcon Icon={<EyeIcon className="w-[19px] h-[14px]" />} />
         </div>
+        <div className="absolute -bottom-20 group-hover:bottom-0 transition-all duration-300 ease-in right-0 left-0">
+          <Button
+            buttonText="Add To Cart"
+            width="100%"
+            height="41px"
+            bgColor="#000000"
+            textWeight="500"
+            borderRadius="0px 0px 4px 4px"
+            applyHoverEffect={false}
+          />
+        </div>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 w-[270px]">
         <h2 className="text-text2 text-[16px] font-medium truncate tracking-wide">
           HAVIT HV-G92 Gamepad
         </h2>

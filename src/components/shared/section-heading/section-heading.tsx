@@ -12,14 +12,14 @@ interface SectionHeadingProps {
   typeText: string;
   headingText: string;
   isTimerVisable?: boolean;
-  buttonType: ButtonType;
+  buttonType?: ButtonType;
 }
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({
   typeText,
   headingText,
-  isTimerVisable,
-  buttonType,
+  isTimerVisable = false,
+  buttonType = ButtonType.ArrowButton,
 }) => {
   return (
     <div className="max-w-screen-xl w-full mx-auto flex justify-between items-end">
@@ -31,54 +31,59 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
           </p>
         </div>
 
-        <div className=" flex items-end space-x-[87px]">
-          <h2 className="text-3xl font-semibold text-text2 leading-[1.4] tracking-wide">
+        <div
+          style={{ marginTop: isTimerVisable ? "none" : "20px" }}
+          className=" flex items-end space-x-[87px]"
+        >
+          <h2 className="text-3xl font-semibold text-text2 leading-[1.6] tracking-wide">
             {headingText}
           </h2>
-          <div className="flex items-center space-x-[17px]">
-            <div>
-              <label className="text-[12px] tracking-[0.07px] font-medium ">
-                Days
-              </label>
-              <p className="text-[32px] tracking-widest font-bold text-text2 ">
-                03
+          {isTimerVisable && (
+            <div className="flex items-center space-x-[17px]">
+              <div>
+                <label className="text-[12px] tracking-[0.07px] font-medium ">
+                  Days
+                </label>
+                <p className="text-[32px] leading-[1.4] tracking-widest font-bold text-text2 ">
+                  03
+                </p>
+              </div>
+              <p className="text-hoverButton1 text-[30px] leading-[0] mt-[10px]">
+                :
               </p>
-            </div>
-            <p className="text-hoverButton1 text-[30px] leading-[0] mt-[10px]">
-              :
-            </p>
-            <div>
-              <label className="text-[12px] tracking-[0.07px] font-medium ">
-                Hours
-              </label>
-              <p className="text-[32px] tracking-widest font-bold text-text2 ">
-                03
+              <div>
+                <label className="text-[12px] tracking-[0.07px] font-medium ">
+                  Hours
+                </label>
+                <p className="text-[32px] leading-[1.4]  tracking-widest font-bold text-text2 ">
+                  03
+                </p>
+              </div>
+              <p className="text-hoverButton1 text-[30px] leading-[0] mt-[10px]">
+                :
               </p>
-            </div>
-            <p className="text-hoverButton1 text-[30px] leading-[0] mt-[10px]">
-              :
-            </p>
-            <div>
-              <label className="text-[12px] tracking-[0.07px] font-medium ">
-                Minutes
-              </label>
-              <p className="text-[32px] tracking-widest font-bold text-text2 ">
-                03
+              <div>
+                <label className="text-[12px] tracking-[0.07px] font-medium ">
+                  Minutes
+                </label>
+                <p className="text-[32px] leading-[1.4]  tracking-widest font-bold text-text2 ">
+                  03
+                </p>
+              </div>
+              <p className="text-hoverButton1 text-[30px] leading-[0] mt-[10px]">
+                :
               </p>
-            </div>
-            <p className="text-hoverButton1 text-[30px] leading-[0] mt-[10px]">
-              :
-            </p>
 
-            <div>
-              <label className="text-[12px] tracking-[0.07px] font-medium ">
-                Seconds
-              </label>
-              <p className="text-[32px] tracking-widest font-bold text-text2 ">
-                03
-              </p>
+              <div>
+                <label className="text-[12px] tracking-[0.07px] font-medium ">
+                  Seconds
+                </label>
+                <p className="text-[32px] leading-[1.4]  tracking-widest font-bold text-text2 ">
+                  03
+                </p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
