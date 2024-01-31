@@ -7,7 +7,13 @@ import FavouriteIcon from "@/public/svgs/favourite-icon.svg";
 import FillIcon from "@/components/ui/fill-icon";
 import Button from "@/components/ui/button";
 
-const ProductCard: React.FC = () => {
+interface ProductCardProps {
+  isProductHasVariant?: boolean;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({
+  isProductHasVariant = false,
+}) => {
   return (
     <div className="w-[270px] group h-[350px] cursor-pointer">
       <div className="h-[250px] w-[270px] relative overflow-hidden bg-secondary grid place-items-center rounded-[4px]">
@@ -63,6 +69,15 @@ const ProductCard: React.FC = () => {
             (65)
           </p>
         </div>
+        {isProductHasVariant && (
+          <div className="flex items-center space-x-2 mt-2">
+            <div className="w-5 h-5 rounded-full cursor-pointer bg-secondary2" />
+            <div className="w-5 h-5 relative">
+              <div className="w-3 h-3 left-[4px] top-[4px] absolute bg-[#184A48] rounded-full" />
+              <div className="w-5 h-5 left-0 top-0 absolute rounded-full border-2 border-bg2" />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

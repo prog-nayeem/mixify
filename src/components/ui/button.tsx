@@ -37,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      className="w-full"
+      style={{ width: width }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

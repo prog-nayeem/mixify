@@ -2,10 +2,12 @@ import React from "react";
 import LeftArrowIcon from "@/public/svgs/left-arrow-icon.svg";
 import RightArrowIcon from "@/public/svgs/right-arrow-icon.svg";
 import FillIcon from "@/components/ui/fill-icon";
+import Button from "@/components/ui/button";
 
 export enum ButtonType {
   ArrowButton,
   NormalButton,
+  None,
 }
 
 interface SectionHeadingProps {
@@ -86,26 +88,29 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
           )}
         </div>
       </div>
-
-      <div className="flex items-start space-x-2">
-        <FillIcon
-          Icon={<LeftArrowIcon className="w-[16px] h-[14px]" />}
-          bgColor="#F5F5F5"
-          width="46px"
-          height="46px"
-        />
-        <FillIcon
-          Icon={
-            <RightArrowIcon
-              className="w-[16px] h-[14px] stroke-bg2"
-              strokeWidth={2}
-            />
-          }
-          bgColor="#F5F5F5"
-          width="46px"
-          height="46px"
-        />
-      </div>
+      {buttonType === ButtonType.ArrowButton ? (
+        <div className="flex items-start space-x-2">
+          <FillIcon
+            Icon={<LeftArrowIcon className="w-[16px] h-[14px]" />}
+            bgColor="#F5F5F5"
+            width="46px"
+            height="46px"
+          />
+          <FillIcon
+            Icon={
+              <RightArrowIcon
+                className="w-[16px] h-[14px] stroke-bg2"
+                strokeWidth={2}
+              />
+            }
+            bgColor="#F5F5F5"
+            width="46px"
+            height="46px"
+          />
+        </div>
+      ) : buttonType == ButtonType.NormalButton ? (
+        <Button width="159px" buttonText="View All" textWeight="500" />
+      ) : null}
     </div>
   );
 };

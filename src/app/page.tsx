@@ -1,9 +1,12 @@
 import CategoryList from "@/components/home/category-list";
+import CategoryMusic from "@/components/home/category-music";
 import {
   SubCategory,
   subCategories,
 } from "@/components/home/data/sub-categories";
 import HeroSlider from "@/components/home/hero-slider";
+import HomeProducts from "@/components/home/home-products";
+import NewArivalSection from "@/components/home/new-arrival-section";
 import SubCategoryCard from "@/components/home/sub-category-card";
 import ProductCard from "@/components/shared/products/product-card";
 import SectionHeading, {
@@ -30,7 +33,7 @@ export default function Home() {
           <div className="flex space-x-[30px]">
             <ProductCard />
             <ProductCard />
-            <ProductCard />
+            <ProductCard isProductHasVariant={true} />
             <ProductCard />
             <ProductCard />
             <ProductCard />
@@ -71,11 +74,15 @@ export default function Home() {
         <div className="mt-[60px] flex space-x-[30px]">
           <ProductCard />
           <ProductCard />
-          <ProductCard />
+          <ProductCard isProductHasVariant={true} />
           <ProductCard />
         </div>
       </section>
-      <section className="mt-[140px] max-w-screen-xl mx-auto bg-bg2"></section>
+      <section className="mt-[140px] max-w-screen-xl mx-auto ">
+        <CategoryMusic />
+      </section>
+      <HomeProducts />
+      <NewArivalSection />
     </div>
   );
 }

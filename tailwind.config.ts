@@ -25,7 +25,7 @@ const config: Config = {
         text1: "#D37643",
         text2: "#000000",
         button: "#000000",
-        button1: "#47B486",
+        button1: "#00FF66",
         button2: "#DB4444",
         hoverButton: "#E2B93B",
         hoverButton1: "#EB5757",
