@@ -7,6 +7,7 @@ import {
 import HeroSlider from "@/components/home/hero-slider";
 import HomeProducts from "@/components/home/home-products";
 import NewArivalSection from "@/components/home/new-arrival-section";
+import Services from "@/components/home/services";
 import SubCategoryCard from "@/components/home/sub-category-card";
 import ProductCard from "@/components/shared/products/product-card";
 import SectionHeading, {
@@ -18,7 +19,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="pb-40 overflow-hidden">
+    <div className="overflow-hidden">
       <section className="max-w-screen-xl w-full mx-auto flex">
         <CategoryList />
         <HeroSlider />
@@ -83,6 +84,7 @@ export default function Home() {
       </section>
       <HomeProducts />
       <NewArivalSection />
+      <Services />
     </div>
   );
 }

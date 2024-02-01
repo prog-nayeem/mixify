@@ -6,7 +6,9 @@ import FavouriteIcon from "@/public/svgs/favourite-icon.svg";
 function Header() {
   return (
     <header className="max-w-screen-xl mt-10 flex mx-auto justify-between items-center w-full h-[38px]">
-      <h2 className="text-[24px] font-bold tracking-wider">Mixify</h2>
+      <h2 className="text-[24px] font-bold tracking-[1.4px] leading-normal">
+        Mixify
+      </h2>
       <nav>
         <ul className=" space-x-[48px] flex text-[16px] font-normal">
           <li className="border-b border-text2 cursor-pointer">Home</li>

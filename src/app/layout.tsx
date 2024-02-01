@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import TopNewsHeader from "@/components/nav/top-news-header";
 import Header from "@/components/nav/header";
 import Line from "@/components/ui/line";
+import Footer from "@/components/shared/footer/footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Header />
         <Line className="mt-4" />
         {children}
+        <Footer />
       </body>
     </html>
   );

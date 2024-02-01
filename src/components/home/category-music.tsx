@@ -1,6 +1,6 @@
 import React from "react";
 import FillIcon from "../ui/fill-icon";
-import Timers from "./data/timer";
+import FlashSellTimers from "./data/flash-sell-timer";
 import Button from "../ui/button";
 import musicBanner from "@/public/images/category-music-banner-image.png";
 import Image from "next/image";
@@ -16,7 +16,7 @@ const CategoryMusic = () => {
           Enhance Your Music Experience
         </h2>
         <div className="flex items-center mt-8 mb-10 space-x-[24px]">
-          {Timers.map((entry, index) => (
+          {FlashSellTimers.map((entry, index) => (
             <FillIcon
               key={index}
               Icon={

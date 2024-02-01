@@ -1,4 +1,4 @@
-export interface Timer {
+export interface FlashSellTimer {
   time: PaddedNumber;
   timeType: string;
 }
@@ -15,11 +15,11 @@ const createPaddedNumber = (value: number): PaddedNumber => {
   };
 };
 
-const Timers: Timer[] = [
+const FlashSellTimers: FlashSellTimer[] = [
   { time: createPaddedNumber(5), timeType: "Days" },
   { time: createPaddedNumber(23), timeType: "Hours" },
   { time: createPaddedNumber(59), timeType: "Minutes" },
   { time: createPaddedNumber(35), timeType: "Seconds" },
 ];
 
-export default Timers;
+export default FlashSellTimers;
